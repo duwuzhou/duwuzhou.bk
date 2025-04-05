@@ -12,13 +12,16 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "^/(articles|users)(/.*)?$",
       "dest": "index.js"
     },
     {
-      "src": "/(.*)",
+      "src": "^/(.+\\.[a-zA-Z]+)$",
       "dest": "public/$1"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "public/index.html"
     }
-  ],
-  "outputDirectory": "dist"
+  ]
 }
