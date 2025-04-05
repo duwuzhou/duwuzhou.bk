@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const pool = require('./config/db');
+const cors = require('cors');
 
 app.use(express.static('public'));
 
 // 添加JSON解析中间件
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('最基本的Node.js后端服务');
