@@ -1,0 +1,13 @@
+{
+  "name": "basic-node-backend",
+  "version": "1.0.0",
+  "description": "最基本的Node.js后端",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.14.0"
+  }
+}
