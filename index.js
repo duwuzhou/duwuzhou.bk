@@ -8,7 +8,12 @@ app.use(express.static('public'));
 
 // 添加JSON解析中间件
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['https://duwuzhou.github.io'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 app.get('/', (req, res) => {
   res.send('最基本的Node.js后端服务');

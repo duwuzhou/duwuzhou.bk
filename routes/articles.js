@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const Article = require('../models/article');
+const cors = require('cors');
+
+router.use(cors({
+  origin: ['https://duwuzhou.github.io'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 // 获取所有文章
 router.get('/', async (req, res) => {
